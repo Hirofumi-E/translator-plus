@@ -50,6 +50,7 @@
     input,
     textarea {
       font: inherit;
+      color: var(--ink);
     }
 
     button,
@@ -138,10 +139,22 @@
       min-height: 42px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--field);
+      background-color: var(--field);
+      background-image: none;
       color: var(--ink);
       outline: none;
       padding: 0 11px;
+    }
+
+    select option {
+      background: var(--field);
+      color: var(--ink);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #74857f;
+      opacity: 1;
     }
 
     select:focus,
@@ -156,7 +169,7 @@
       min-height: 42px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--panel-2);
+      background-color: var(--panel-2);
       color: var(--ink);
       cursor: pointer;
     }
@@ -249,13 +262,22 @@
       outline: none;
       padding: 15px;
       color: var(--ink);
-      background: var(--field);
+      background-color: var(--field);
       line-height: 1.65;
       font-size: 1rem;
+      caret-color: var(--accent);
     }
 
     #outputText {
-      background: var(--soft);
+      background-color: var(--soft);
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--ink);
+      box-shadow: 0 0 0 1000px var(--field) inset;
+      transition: background-color 9999s ease-in-out 0s;
     }
 
     .settings {
